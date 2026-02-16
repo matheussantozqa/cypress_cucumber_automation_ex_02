@@ -6,6 +6,7 @@ When Verify that home page is visible successfully
 Then Click on Signup_Login button
 Then Verify 'Login to your account' is visible
 
+
 @focus
 Scenario: Register User
 When Enter name and email address
@@ -20,11 +21,13 @@ Then Verify that 'ACCOUNT CREATED!' is visible
 When Click 'Continue' button
 Then Verify that 'Logged in as username' is visible
 
+
 @focus
 Scenario: Register User with existing email
 When Enter name and already registered email address
 When Click Signup button
 Then Verify error 'Email Address already exist!' is visible
+
 
 @focus
 Scenario: Login User with incorrect email and password
@@ -32,12 +35,14 @@ When Enter incorrect email address and password
 When Click 'login' button
 Then Verify error 'Your email or password is incorrect!' is visible
 
+
 @focus
 Scenario: Login User with correct email and password
-When The user fill email address 
+When The user fill email address
 Then The user fill password
 When Click 'login' button
 Then Verify that 'Logged in as username' is visible
+
 
 @focus
 Scenario: Logout User
