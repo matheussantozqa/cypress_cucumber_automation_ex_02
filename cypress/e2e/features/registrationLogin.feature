@@ -46,11 +46,19 @@ Then Verify that 'Logged in as username' is visible
 
 @focus
 Scenario: Logout User
-When Enter correct email address and password
+When Fill Correct Email and Password
 When Click 'login' button
-Then Verify that 'Logged in as username' is visible
+Then Verify if is Logged as username
 When Click 'Logout' button
 Then Verify that user is navigated to login page
+
+@focus
+Scenario: Delete Account
+When Fill Correct Email and Password
+When Click 'login' button
+Then Verify if is Logged as username
+When Click 'Delete Account' button
+Then logged username should be not visible anymore
 
 
 
