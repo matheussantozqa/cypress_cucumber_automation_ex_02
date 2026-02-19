@@ -2,9 +2,8 @@ Feature: Subscription
 
 @focus
 Scenario: Verify Subscription in home page
-Given Launch browser
-When Navigate to url 'http://automationexercise.com'
-Then Verify that home page is visible successfully
+Given The user Navigate to home
+Then Verify that home page is sucessfuly visible 
 When Scroll down to footer
 Then Verify text 'SUBSCRIPTION'
 When Enter email address in input and click arrow button

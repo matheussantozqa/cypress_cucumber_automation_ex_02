@@ -1,44 +1,47 @@
 Feature: Cart Actions
 
 Background:
-Given The user is on the home page
-Then Click Products Button
-Then Verify user is navigated to ALL PRODUCTS page successfully
+Given User opens login screen
+Then User submits credentials and performs login
+Then Homepage should be displayed after authentication
+
 
 @focus
 Scenario: Add Products in Cart
-When Hover over first product and click 'Add to cart'
-When Click 'Continue Shopping' button
-When Hover over second product and click 'Add to cart'
-When Click 'View Cart' button
-Then Verify both products are added to Cart
-Then Verify their prices, quantity and total price
+When User hovers first item and adds it to cart
+When User selects continue shopping option
+When User hovers second item and adds it to cart
+When User opens cart overview
+Then Cart should contain two selected items
+Then Cart pricing, quantity and totals must be visible
+
 
 @focus
 Scenario: Verify Product quantity in Cart
-When Click 'View Product' for any product on home page
-Then Verify product detail is opened
-When Increase quantity to 4
-When Click 'Add to cart' button
-When Click 'View Cart' button
-Then Verify that product is displayed in cart page with exact quantity
+When User opens details page of any item
+Then Item details screen should appear
+When User changes quantity field to four units
+When User adds item into cart from details page
+When User opens cart overview
+Then Cart must display item with quantity four
+
 
 @focus
 Scenario: Remove Products From Cart
-When Add products to cart
-When Click 'Cart' button
-Then Verify that cart page is displayed
-When Click 'X' button corresponding to particular product
-Then Verify that product is removed from the cart
+When User adds multiple items into cart list
+When User navigates to cart section
+Then Cart overview page should load
+When User removes specific item using delete icon
+Then Removed item should no longer appear in cart
 
 
 @focus
 Scenario: Search Products and Verify Cart After Login
-When Enter product name in search input and click search button
-Then Verify 'SEARCHED PRODUCTS' is visible
-Then Verify all the products related to search are visible
-When Add those products to cart
-When Click 'Cart' button and verify that products are visible in cart
-When Click 'Signup / Login' button and submit login details
-When Again, go to Cart page
-Then Verify that those products are visible in cart after login as well
+When User performs product search and submits query
+Then Search results header must be shown
+Then Matching items from search should be listed
+When User adds all filtered search items to cart
+When User opens cart and confirms items exist
+When User signs in through authentication page
+When User returns to cart after login
+Then Cart must still contain previously added items
