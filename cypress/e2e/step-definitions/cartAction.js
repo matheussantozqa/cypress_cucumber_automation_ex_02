@@ -12,7 +12,15 @@ Given("User opens login screen", () => {
 Then("User submits credentials and performs login", () => {
   cy.get("[data-qa='login-email']").type("Antoieine@test.com"); 
   cy.get("[data-qa='login-password']").type("12345"); 
-  cy.get("[data-qa='login-button']").click();  
+  cy.get("[data-qa='login-button']").click(); 
+
+   cy.visit("/view_cart");
+
+  cy.get("body").then(body => {
+    if(body.find(".cart_quantity_delete").length > 0){
+      cy.get(".cart_quantity_delete").click({ multiple:true, force:true });
+    }
+  });
 });
 
 Then("Homepage should be displayed after authentication", () => {
@@ -25,7 +33,7 @@ Then("Homepage should be displayed after authentication", () => {
 // ============================
 
 When("User hovers first item and adds it to cart", () => {
-  cy.get("[data-product-id='5']").eq(0).click();
+  cy.get("[data-product-id='1']").eq(0).click();
 });
 
 When("User selects continue shopping option", () => {
@@ -33,22 +41,23 @@ When("User selects continue shopping option", () => {
 });
 
 When("User hovers second item and adds it to cart", () => {
-  cy.get("[data-dismiss='modal']").eq(0).click();
+  cy.get("[data-product-id='5']").eq(0).click();
 });
 
 When("User opens cart overview", () => {
-  cy.get("[href='/view_cart']").eq(1).click();
+  cy.get("[href='/view_cart']").eq(0).click();
 });
 
 Then("Cart should contain two selected items", () => {
-  cy.get("#product-5").should('be.visible');
-  cy.get("#product-6").should('be.visible');
+  cy.get(".cart_description").should("have.length", 2);
 });
 
 Then("Cart pricing, quantity and totals must be visible", () => {
   cy.get(".cart_total_price").should("be.visible");
   cy.get(".cart_quantity").should("be.visible");
   cy.get(".total").should("be.visible");
+  cy.get(".cart_quantity_delete").click({ multiple: true, force: true });
+  
 });
 
 
@@ -76,6 +85,7 @@ When("User adds item into cart from details page", () => {
 Then("Cart must display item with quantity four", () => {
   cy.get(".cart_quantity").should("contain.text", "4");
   cy.get("[data-product-id='19']").click();
+  cy.get(".cart_quantity_delete").click({ multiple: true, force: true });
 });
 
 
@@ -84,26 +94,34 @@ Then("Cart must display item with quantity four", () => {
 // ============================
 
 When("User adds multiple items into cart list", () => {
-  cy.get("").each(($el) => {
-    cy.wrap($el).trigger("mouseover");
-    cy.wrap($el).click();
-  });
+  cy.get("[data-product-id='3']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
+  cy.get("[data-product-id='13']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
+  cy.get("[data-product-id='18']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
+  cy.get("[data-product-id='21']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
+  cy.get("[data-product-id='42']").eq(0).click();
+  
 });
 
 When("User navigates to cart section", () => {
-  cy.get("").click();
+  cy.get("[href='/view_cart']").eq(1).click();
 });
 
 Then("Cart overview page should load", () => {
-  cy.url().should("include", "");
+  cy.contains("Item").should("be.visible");
+  cy.contains("Description").should("be.visible");
 });
 
 When("User removes specific item using delete icon", () => {
-  cy.get("").first().click();
+  cy.get('#product-3 > .cart_delete > .cart_quantity_delete').click();
 });
 
 Then("Removed item should no longer appear in cart", () => {
-  cy.get("").should("not.exist");
+  cy.contains("Sleeveless Dress").should("not.exist");
+  cy.get(".cart_quantity_delete").click({ multiple: true, force: true });
 });
 
 
@@ -112,41 +130,47 @@ Then("Removed item should no longer appear in cart", () => {
 // ============================
 
 When("User performs product search and submits query", () => {
-  cy.get("").type("");
-  cy.get("").click();
+  cy.get("[href='/logout']").click()
+  cy.visit("/products");
+  cy.get("[placeholder='Search Product']").type("Cotton");
+  cy.get("[type='button']").click();
 });
 
 Then("Search results header must be shown", () => {
-  cy.contains("").should("be.visible");
+  cy.contains("Cotton").should("be.visible");
+  cy.get(".single-products")
+    .should("contain.text", "Cotton");  
 });
 
-Then("Matching items from search should be listed", () => {
-  cy.get("").should("be.visible");
-});
-
-When("User adds all filtered search items to cart", () => {
-  cy.get("").each(($el) => {
-    cy.wrap($el).trigger("mouseover");
-    cy.wrap($el).click();
-  });
+When("User adds 2 items of the filtered search items to cart", () => {
+  cy.get("[data-product-id='28']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
+  cy.get("[data-product-id='21']").eq(0).click();
+  cy.get("[data-dismiss='modal']").click();
 });
 
 When("User opens cart and confirms items exist", () => {
-  cy.get("").click();
-  cy.get("").should("be.visible");
+  cy.get("[href='/view_cart']").eq(0).click();
+  cy.get(".cart_description")
+  .filter(":contains('Cotton')")
+  .should("have.length", 2);
+  
 });
 
 When("User signs in through authentication page", () => {
-  cy.get("").click();
-  cy.get("").type("");
-  cy.get("").type("");
-  cy.get("").click();
+  cy.visit("/login");
+  cy.get("[data-qa='login-email']").type("Antoieine@test.com"); 
+  cy.get("[data-qa='login-password']").type("12345"); 
+  cy.get("[data-qa='login-button']").click(); 
 });
 
 When("User returns to cart after login", () => {
-  cy.get("").click();
+  cy.get("[href='/view_cart']").eq(0).click();
 });
 
 Then("Cart must still contain previously added items", () => {
-  cy.get("").should("be.visible");
+  cy.get(".cart_description")
+  .filter(":contains('Cotton')")
+  .should("have.length", 2);
+  cy.get(".cart_quantity_delete").click({ multiple: true, force: true });
 });

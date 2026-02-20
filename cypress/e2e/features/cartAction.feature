@@ -39,8 +39,7 @@ Then Removed item should no longer appear in cart
 Scenario: Search Products and Verify Cart After Login
 When User performs product search and submits query
 Then Search results header must be shown
-Then Matching items from search should be listed
-When User adds all filtered search items to cart
+When User adds 2 items of the filtered search items to cart
 When User opens cart and confirms items exist
 When User signs in through authentication page
 When User returns to cart after login
