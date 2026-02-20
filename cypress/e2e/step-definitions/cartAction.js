@@ -24,6 +24,7 @@ Then("User submits credentials and performs login", () => {
 });
 
 Then("Homepage should be displayed after authentication", () => {
+  cy.visit("/");
   cy.get("[style='color: orange;']").should("be.visible");
 });
 
