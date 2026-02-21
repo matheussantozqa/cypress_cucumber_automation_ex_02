@@ -187,7 +187,7 @@ Then("Cart overview page should load", () => {
 When("User removes specific item using delete icon", () => {
 
   cy.fixture("pomCartAction").then((el) => {
-    cy.get('#product-3 > .cart_delete > .cart_quantity_delete').click();
+    cy.get(el.deleteIcon).click();
   });
 
 });
