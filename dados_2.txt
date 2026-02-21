@@ -1,0 +1,5 @@
+user creation for checkoutflow
+
+user: Joselito
+email: joselitocabron@gmail.com		
+password: 45678test
