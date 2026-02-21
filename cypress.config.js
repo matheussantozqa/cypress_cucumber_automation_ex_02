@@ -8,7 +8,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 15000,
     viewportHeight: 900,
     viewportWidth: 1400,
-    experimentalRunAllSpecs: true,
+    // experimentalRunAllSpecs: true,
     specPattern: "**/*.feature",
 
     setupNodeEvents(on, config) {
