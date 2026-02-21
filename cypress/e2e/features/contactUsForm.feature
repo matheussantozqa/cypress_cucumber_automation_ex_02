@@ -1,7 +1,7 @@
 Feature: Contact Us Form
 
 @focus
-Scenario: Register User with existing email
+Scenario: Contact with existing email
 Given The User Navigate to automationexercise.com
 Then Verify if home page is visible
 When Click on 'Contact Us' button

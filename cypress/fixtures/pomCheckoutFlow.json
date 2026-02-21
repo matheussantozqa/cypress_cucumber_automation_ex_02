@@ -1,0 +1,63 @@
+{
+  "url": "",
+
+  "productsPage": "[href='/products']",
+  "cartLink": "[href='/view_cart']",
+  "loginLink": "[href='/login']",
+  "deleteAccountLink": "[href='/delete_account']",
+  "logoutLink": "[href='/logout']",
+  "checkoutButton": ".check_out",
+  "dismissModal": "[data-dismiss='modal']",
+
+  "product4": "[data-product-id='4']",
+  "product6": "[data-product-id='6']",
+  "product3": "[data-product-id='3']",
+  "product13": "[data-product-id='13']",
+  "product18": "[data-product-id='18']",
+  "product21": "[data-product-id='21']",
+  "product42": "[data-product-id='42']",
+
+  "nameField": "[placeholder='Name']",
+  "emailField": "[placeholder='Email Address']",
+  "signupButton": "[data-qa='signup-button']",
+
+  "loginEmail": "[data-qa='login-email']",
+  "loginPassword": "[data-qa='login-password']",
+  "loginButton": "[data-qa='login-button']",
+
+  "titleMr": "[value='Mr']",
+  "passwordField": "[data-qa='password']",
+  "daysSelect": "[data-qa='days']",
+  "monthsSelect": "[data-qa='months']",
+  "yearsSelect": "[data-qa='years']",
+
+  "firstName": "[data-qa='first_name']",
+  "lastName": "[data-qa='last_name']",
+  "company": "[data-qa='company']",
+  "address": "[data-qa='address']",
+  "country": "[data-qa='country']",
+  "state": "[data-qa='state']",
+  "city": "[data-qa='city']",
+  "zipcode": "[data-qa='zipcode']",
+  "mobile": "[data-qa='mobile_number']",
+
+  "createAccount": "[data-qa='create-account']",
+  "continueButton": "[data-qa='continue-button']",
+
+  "messageField": "[name='message']",
+  "paymentLink": "[href='/payment']",
+
+  "cardName": "[name='name_on_card']",
+  "cardNumber": "[data-qa='card-number']",
+  "cvc": "[data-qa='cvc']",
+  "expiryMonth": "[data-qa='expiry-month']",
+  "expiryYear": "[data-qa='expiry-year']",
+  "payButton": "[data-qa='pay-button']",
+
+  "orderPlaced": "[data-qa='order-placed']",
+  "accountDeleted": "[data-qa='account-deleted']",
+
+  "successMessage": "Congratulations! Your order has been confirmed!",
+  "deletedMessage": "Your account has been permanently deleted!",
+  "loggedInText": "Logged in as"
+}

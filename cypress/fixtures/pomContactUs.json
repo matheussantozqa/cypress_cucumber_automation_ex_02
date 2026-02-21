@@ -1,0 +1,26 @@
+{
+  "baseUrl": "",
+
+  "homeIndicator": "[style='color: orange;']",
+  "contactUsButton": "[href='/contact_us']",
+
+  "getInTouchText": "Get In Touch",
+
+  "nameField": "[data-qa='name']",
+  "emailField": "[data-qa='email']",
+  "subjectField": "[data-qa='subject']",
+  "messageField": "[data-qa='message']",
+
+  "uploadInput": "[name='upload_file']",
+  "submitButton": "[data-qa='submit-button']",
+  "homeButton": ".btn-success",
+
+  "successMessage": "Success! Your details have been submitted successfully.",
+
+  "nameValue": "Antoieine",
+  "emailValue": "Antoieine@test.com",
+  "subjectValue": "Thanks for this site!",
+  "messageValue": "Thanks for deliver this site for us to test for free. Really appreciate!",
+
+  "filePath": "cypress/fixtures/testing.pdf"
+}

@@ -1,0 +1,43 @@
+{
+  "productsUrl": "/products",
+
+  "viewProduct1": "[href='/product_details/1']",
+  "searchField": "[name='search']",
+  "genericButton": "[type='button']",
+
+  "womenCategory": "[href='#Women']",
+  "womenDressCategory": "[href='/category_products/1']",
+
+  "menCategory": "[href='#Men']",
+  "menJeansCategory": "[href='/category_products/6']",
+
+  "brandAllen": "[href='/brand_products/Allen Solly Junior']",
+  "brandPolo": "[href='/brand_products/Polo']",
+
+  "reviewName": "[placeholder='Your Name']",
+  "reviewEmail": "[placeholder='Email Address']",
+  "reviewMessage": "[placeholder='Add Review Here!']",
+  "submitReviewButton": "[type='submit']",
+
+  "blueTopText": "Blue Top",
+  "categoryWomenTopsText": "Category: Women > Tops",
+  "priceText": "Rs. 500",
+  "availabilityText": "Availability:",
+  "conditionText": "Condition:",
+  "brandText": "Brand:",
+
+  "writeReviewText": "Write Your Review",
+  "searchedProductText": "T-Shirt",
+
+  "womenDressPageText": "Women - Dress Products",
+  "menJeansPageText": "Men - Jeans Products",
+
+  "brandAllenPageText": "Brand - Allen Solly Junior Products",
+  "brandPoloPageText": "Brand - Polo Products",
+
+  "reviewSuccessText": "Thank you for your review.",
+
+  "reviewNameValue": "Antoêine",
+  "reviewEmailValue": "Antoieine@test.com",
+  "reviewMessageValue": "I love this product!"
+}

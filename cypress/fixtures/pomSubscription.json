@@ -1,0 +1,15 @@
+{
+  "baseUrl": "",
+
+  "homeIndicator": "[style='color: orange;']",
+  "scrollPosition": "bottom",
+
+  "subscriptionText": "Subscription",
+
+  "emailField": "[type='email']",
+  "submitButton": "[type='submit']",
+
+  "emailValue": "Antoieine@test.com",
+
+  "successMessage": "You have been successfully subscribed!"
+}

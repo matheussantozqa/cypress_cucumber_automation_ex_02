@@ -1,0 +1,45 @@
+{
+  "loginUrl": "/login",
+  "homeUrl": "/",
+  "productsUrl": "/products",
+  "cartUrl": "/view_cart",
+
+  "loginEmail": "[data-qa='login-email']",
+  "loginPassword": "[data-qa='login-password']",
+  "loginButton": "[data-qa='login-button']",
+  "logoutLink": "[href='/logout']",
+
+  "deleteIcon": ".cart_quantity_delete",
+  "cartLink": "[href='/view_cart']",
+  "cartDescription": ".cart_description",
+  "cartTotalPrice": ".cart_total_price",
+  "cartQuantity": ".cart_quantity",
+  "cartTotal": ".total",
+
+  "modalDismiss": "[data-dismiss='modal']",
+
+  "product1": "[data-product-id='1']",
+  "product5": "[data-product-id='5']",
+  "product3": "[data-product-id='3']",
+  "product13": "[data-product-id='13']",
+  "product18": "[data-product-id='18']",
+  "product21": "[data-product-id='21']",
+  "product42": "[data-product-id='42']",
+  "product28": "[data-product-id='28']",
+
+  "productDetails19": "[href='/product_details/19']",
+  "quantityField": "[name='quantity']",
+  "genericButton": "[type='button']",
+
+  "searchField": "[placeholder='Search Product']",
+  "singleProducts": ".single-products",
+
+  "homepageIndicator": "[style='color: orange;']",
+
+  "loginEmailValue": "Antoieine@test.com",
+  "loginPasswordValue": "12345",
+
+  "searchKeyword": "Cotton",
+  "expectedCategoryText": "Category: Kids > Dress",
+  "removedItemText": "Sleeveless Dress"
+}

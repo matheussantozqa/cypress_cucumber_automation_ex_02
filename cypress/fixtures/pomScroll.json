@@ -1,0 +1,10 @@
+{
+  "baseUrl": "",
+
+  "scrollPosition": "bottom",
+
+  "subscriptionText": "Subscription",
+  "scrollTopArrow": "[href='#top']",
+
+  "topBannerText": "Full-Fledged practice website for Automation Engineers"
+}

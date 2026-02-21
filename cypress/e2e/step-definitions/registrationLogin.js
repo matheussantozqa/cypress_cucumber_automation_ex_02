@@ -1,173 +1,286 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
-
 // ============================
 // Background
 // ============================
 
 Given("The User Navigate to url automationexercise.com", () => {
-  cy.visit("");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.visit(el.baseUrl);
+  });
+
 });
 
 When("Verify that home page is visible successfully", () => {
-  cy.get("[style='color: orange;']").should("be.visible");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.homeIndicator).should("be.visible");
+  });
+
 });
 
 Then("Click on Signup_Login button", () => {
-  cy.get("[href='/login']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.loginLink).click();
+  });
+
 });
 
 Then("Verify 'Login to your account' is visible", () => {
-  cy.contains("Login to your account").should("be.visible");
-});
 
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.loginPageText).should("be.visible");
+  });
+
+});
 
 // ============================
 // Register User
 // ============================
 
 When("Enter name and email address", () => {
-  cy.get("[data-qa='signup-name']").type("Tester Silva");
-  cy.get("[data-qa='signup-email']").type("testersilva@gmail.com");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.signupName).type(el.signupNameValue);
+    cy.get(el.signupEmail).type(el.signupEmailValue);
+  });
+
 });
 
 When("Click 'Signup' button", () => {
-  cy.get("[data-qa='signup-button']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.signupButton).click();
+  });
+
 });
 
 Then("The User Should be Redirected to Create Account Page", () => {
-  cy.get(".title").should("contain.text", "Enter Account Information");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(".title").should("contain.text", el.enterAccountInfoText);
+  });
+
 });
 
 When("Fill details: Title, Name, Email, Password, Date of birth", () => {
-  cy.get("[value='Mr']").click();
-  cy.get("[data-qa='password']").type("test12345"); 
-  cy.get("[data-qa='days']").select("22"); 
-  cy.get("[data-qa='months']").select("May"); 
-  cy.get("[data-qa='years']").select("1998"); 
+
+  cy.fixture("pomRegistration").then((el) => {
+
+    cy.get(el.titleMr).click();
+    cy.get(el.passwordField).type(el.passwordValue);
+    cy.get(el.daysSelect).select("22");
+    cy.get(el.monthsSelect).select("May");
+    cy.get(el.yearsSelect).select("1998");
+
+  });
+
 });
 
 When("Select checkbox 'Sign up for our newsletter!'", () => {
-  cy.get("[name='newsletter']").check();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.newsletterCheckbox).check();
+  });
+
 });
 
 When("Select checkbox 'Receive special offers from our partners!'", () => {
-  cy.get("[name='optin']").check();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.optinCheckbox).check();
+  });
+
 });
 
 When("Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number", () => {
-  cy.get("[data-qa='first_name']").type("Tester");
-  cy.get("[data-qa='last_name']").type("Silva");
-  cy.get("[data-qa='company']").type("Owner TI");
-  cy.get("[data-qa='address']").type("Valdormiro Advaldo, 5234 - South");
-  cy.get("[data-qa='country']").select("New Zealand");
-  cy.get("[data-qa='state']").type("Auckland");
-  cy.get("[data-qa='city']").type("Brooklyn");
-  cy.get("[data-qa='zipcode']").type("54632");
-  cy.get("[data-qa='mobile_number']").type("43999230040");
+
+  cy.fixture("pomRegistration").then((el) => {
+
+    cy.get(el.firstName).type(el.firstNameValue);
+    cy.get(el.lastName).type(el.lastNameValue);
+    cy.get(el.company).type(el.companyValue);
+    cy.get(el.address).type(el.addressValue);
+    cy.get(el.country).select(el.countryValue);
+    cy.get(el.state).type(el.stateValue);
+    cy.get(el.city).type(el.cityValue);
+    cy.get(el.zipcode).type(el.zipcodeValue);
+    cy.get(el.mobile).type(el.mobileValue);
+
+  });
+
 });
 
 When("Click 'Create Account button'", () => {
-  cy.get("[data-qa='create-account']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.createAccountButton).click();
+  });
+
 });
 
 Then("Verify that 'ACCOUNT CREATED!' is visible", () => {
-  cy.get("[data-qa='account-created']").should("be.visible");
-})
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.accountCreatedIndicator).should("be.visible");
+  });
+
+});
 
 When("Click 'Continue' button", () => {
-  cy.get("[data-qa='continue-button']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.continueButton).click();
+  });
+
 });
 
 Then("Verify that 'Logged in as username' is visible", () => {
-  cy.contains('Logged in as').should('be.visible');
-  cy.get("[href='/logout']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+
+    cy.contains(el.loggedInText).should("be.visible");
+    cy.get(el.logoutLink).click();
+
+  });
+
 });
 
-
 // ============================
-// Register User with existing email
+// Existing Email
 // ============================
 
 When("Enter name and already registered email address", () => {
-  cy.get("[data-qa='signup-name']").type("Tester Silva");
-  cy.get("[data-qa='signup-email']").type("testersilva@gmail.com");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.signupName).type(el.signupNameValue);
+    cy.get(el.signupEmail).type(el.signupEmailValue);
+  });
+
 });
 
 When("Click Signup button", () => {
-  cy.get("[data-qa='signup-button']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.signupButton).click();
+  });
+
 });
 
 Then("Verify error 'Email Address already exist!' is visible", () => {
-  cy.contains("Email Address already exist!").should("be.visible");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.emailExistsError).should("be.visible");
+  });
+
 });
 
-
 // ============================
-// Login User incorrect
+// Incorrect Login
 // ============================
 
 When("Enter incorrect email address and password", () => {
-  cy.get("[data-qa='login-email']").type("austinho@trimlim");
-  cy.get("[data-qa='login-password']").type("12341838");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.loginEmail).type(el.incorrectEmailValue);
+    cy.get(el.loginPassword).type(el.incorrectPasswordValue);
+  });
+
 });
 
 When("Click 'login' button", () => {
-  cy.get("[data-qa='login-button']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.loginButton).click();
+  });
+
 });
 
 Then("Verify error 'Your email or password is incorrect!' is visible", () => {
-  cy.contains("Your email or password is incorrect!").should("be.visible");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.incorrectLoginError).should("be.visible");
+  });
+
 });
 
-
 // ============================
-// Login User correct
+// Correct Login
 // ============================
 
 When("The user fill email address", () => {
-  cy.get("[data-qa='login-email']").type("testersilva@gmail.com");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.loginEmail).type(el.signupEmailValue);
+  });
+
 });
 
 Then("The user fill password", () => {
-  cy.get("[data-qa='login-password']").type("test12345");
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.loginPassword).type(el.passwordValue);
+  });
+
 });
 
-
 // ============================
-// Logout User
+// Logout
 // ============================
 
 Then("Verify if is Logged as username", () => {
-  cy.contains('Logged in as').should('be.visible');
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.loggedInText).should("be.visible");
+  });
+
 });
 
 When("Click 'Logout' button", () => {
-  cy.get("[href='/logout']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.logoutLink).click();
+  });
+
 });
 
 Then("Verify that user is navigated to login page", () => {
-  cy.contains("Login to your account").should("be.visible");
-});
 
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.loginPageText).should("be.visible");
+  });
+
+});
 
 // ============================
 // Delete Account
 // ============================
 
 When("Fill Correct Email and Password", () => {
-  cy.get("[data-qa='login-email']").type("testersilva@gmail.com");
-  cy.get("[data-qa='login-password']").type("test12345");
-});
 
-When("Click 'login' button", () => {
-  cy.get("[data-qa='login-button']").click();
+  cy.fixture("pomRegistration").then((el) => {
+
+    cy.get(el.loginEmail).type(el.signupEmailValue);
+    cy.get(el.loginPassword).type(el.passwordValue);
+
+  });
+
 });
 
 When("Click 'Delete Account' button", () => {
-  cy.get("[href='/delete_account']").click();
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.get(el.deleteAccountLink).click();
+  });
+
 });
 
 Then("logged username should be not visible anymore", () => {
-  cy.contains('Logged in as').should('not.exist');
+
+  cy.fixture("pomRegistration").then((el) => {
+    cy.contains(el.loggedInText).should("not.exist");
+  });
+
 });
