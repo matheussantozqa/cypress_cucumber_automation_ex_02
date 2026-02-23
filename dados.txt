@@ -1,0 +1,11 @@
+
+dados para registro na automação
+name: Tester Silva
+email: testersilva@gmail.com
+senha: test12345
+
+
+dados fixos para usar nos outros cenários:
+name: Antoêine
+email: Antoieine@test.com
+password: 12345

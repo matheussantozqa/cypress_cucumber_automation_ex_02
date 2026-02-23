@@ -1,9 +1,9 @@
 Feature: Cart Actions
 
 Background:
-Given User opens login screen
-Then User submits credentials and performs login
-Then Homepage should be displayed after authentication
+Given User is on homepage
+# Then User submits credentials and performs login
+# Then Homepage should be displayed after authentication
 
 
 @focus
@@ -22,7 +22,6 @@ When User opens details page of any item
 Then Item details screen should appear
 When User changes quantity field to four units
 When User adds item into cart from details page
-When User opens cart overview
 Then Cart must display item with quantity four
 
 

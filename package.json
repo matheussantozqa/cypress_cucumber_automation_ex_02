@@ -1,10 +1,20 @@
 {
+  "name": "cypress_cucumber_project",
+  "version": "1.0.0",
+
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+
   "dependencies": {
     "cypress": "^15.10.0"
   },
+
   "devDependencies": {
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
+
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "stepDefinitions": "cypress/e2e/step-definitions/"
