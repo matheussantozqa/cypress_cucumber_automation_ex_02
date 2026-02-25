@@ -91,9 +91,9 @@ Then("Cart must display item with quantity four", () => {
 });
 
 
-// ============================
+// ===========================
 // Remove Products From Cart
-// ============================
+// ===========================
 
 When("User adds multiple items into cart list", () => {
   cy.get("[data-product-id='3']").eq(0).click();
