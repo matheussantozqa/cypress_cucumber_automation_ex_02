@@ -43,5 +43,5 @@ Scenario: Add review on product
 When Click on 'View Product' button
 Then Verify 'Write Your Review' is visible
 When Enter name, email and review
-When Click 'Submit' button
+When Confirm 'Submit' button
 Then Verify success message 'Thank you for your review.'

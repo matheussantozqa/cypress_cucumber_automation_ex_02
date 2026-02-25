@@ -14,5 +14,6 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 import "./hooks";
+import '@shelex/cypress-allure-plugin';

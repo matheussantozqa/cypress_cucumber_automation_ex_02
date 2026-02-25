@@ -13,7 +13,6 @@ Before(() => {
           .first()
           .click({ force: true });
 
-        // espera o DOM atualizar e chama novamente
         cy.wait(500);
         clearCart();
       }

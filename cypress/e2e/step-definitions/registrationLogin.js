@@ -5,19 +5,11 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 // Background
 // ============================
 
-Given("The User Navigate to url automationexercise.com", () => {
-  cy.visit("");
+Given("The User Navigate to login page", () => {
+  cy.visit("https://www.automationexercise.com/login");
 });
 
-When("Verify that home page is visible successfully", () => {
-  cy.get("[style='color: orange;']").should("be.visible");
-});
-
-Then("Click on Signup_Login button", () => {
-  cy.get("[href='/login']").click();
-});
-
-Then("Verify 'Login to your account' is visible", () => {
+When("Verify 'Login to your account' is visible", () => {
   cy.contains("Login to your account").should("be.visible");
 });
 

@@ -1,10 +1,8 @@
 Feature: Authentication - Login and Logout
 
 Background:
-Given The User Navigate to url automationexercise.com
-When Verify that home page is visible successfully
-Then Click on Signup_Login button
-Then Verify 'Login to your account' is visible
+Given The User Navigate to login page
+When Verify 'Login to your account' is visible
 
 
 @focus

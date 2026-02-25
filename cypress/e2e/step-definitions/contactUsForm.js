@@ -6,11 +6,11 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 // ============================
 
 Given("The User Navigate to automationexercise.com", () => {
-  cy.visit("");
+  cy.visit("https://www.automationexercise.com");
 });
 
 Then("Verify if home page is visible", () => {
-  cy.get("[style='color: orange;']").should("be.visible");
+  cy.contains("Features Items").should("be.visible");
 });
 
 When("Click on 'Contact Us' button", () => {
@@ -37,9 +37,7 @@ When("Click 'Submit' button", () => {
   cy.get("[data-qa='submit-button']").click();
 });
 
-Then(
-  "Verify success message 'Success! Your details have been submitted successfully.' is visible",
-  () => {
+Then("Verify success message 'Success! Your details have been submitted successfully.' is visible", () => {
     cy.contains("Success! Your details have been submitted successfully.").should("be.visible");
   }
 );
@@ -48,6 +46,6 @@ When(
   "Click 'Home' button and verify that landed to home page successfully",
   () => {
     cy.get(".btn-success").click();
-    cy.get("[style='color: orange;']").should("be.visible");
+    cy.contains("Features Items").should("be.visible");
   }
 );

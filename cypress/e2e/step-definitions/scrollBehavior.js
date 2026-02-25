@@ -22,8 +22,9 @@ When("Click on arrow at bottom right side to move upward", () => {
 });
 
 Then(
-  "Verify that page is scrolled up and 'Full-Fledged practice website for Automation Engineers' text is visible on screen",
+  "Verify that go back to top page",
   () => {
-    cy.contains("Full-Fledged practice website for Automation Engineers").should("be.visible");
+    cy.window().its("scrollY").should("equal", 0);
+    cy.contains("Features Items").should("be.visible");
   }
 );

@@ -6,9 +6,8 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 // ============================
 
 Given("The user is on product page", () => {
-  cy.visit("/products");
+  cy.visit("https://www.automationexercise.com/products");
 });
-
 
 
 // ============================
@@ -50,7 +49,8 @@ Then("Verify 'SEARCHED PRODUCTS' is visible", () => {
 });
 
 Then("Verify all the products related to search are visible", () => {
-  cy.get("[src='/get_product_picture/2']").should("be.visible");
+  cy.get(".productinfo.text-center p")
+    .should("contain.text", "T-Shirt");
 });
 
 
@@ -137,8 +137,8 @@ When("Enter name, email and review", () => {
   cy.get("[placeholder='Add Review Here!']").type("I love this product!"); 
 });
 
-When("Click 'Submit' button", () => {
-  cy.get("[type='submit']").eq(0).click();
+When("Confirm 'Submit' button", () => {
+  cy.get("#button-review").click();
 });
 
 Then("Verify success message 'Thank you for your review.'", () => {

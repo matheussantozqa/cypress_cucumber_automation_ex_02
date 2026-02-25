@@ -10,24 +10,6 @@ Given("User is on homepage", () => {
   cy.contains("Features Items").should("be.visible");
 });
 
-// Then("User submits credentials and performs login", () => {
-//   cy.get("[data-qa='login-email']").type("Antoieine@test.com"); 
-//   cy.get("[data-qa='login-password']").type("12345"); 
-//   cy.get("[data-qa='login-button']").click(); 
-
-//    cy.visit("/view_cart");
-
-//   cy.get("body").then(body => {
-//     if(body.find(".cart_quantity_delete").length > 0){
-//       cy.get(".cart_quantity_delete").click({ multiple:true, force:true });
-//     }
-//   });
-// });
-
-// Then("Homepage should be displayed after authentication", () => {
-//   cy.get("[style='color: orange;']").should("be.visible");
-// });
-
 
 // ============================
 // Add Products in Cart
@@ -91,9 +73,9 @@ Then("Cart must display item with quantity four", () => {
 });
 
 
-// ===========================
+// ============================
 // Remove Products From Cart
-// ===========================
+// ============================
 
 When("User adds multiple items into cart list", () => {
   cy.get("[data-product-id='3']").eq(0).click();

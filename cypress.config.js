@@ -8,9 +8,11 @@ module.exports = defineConfig({
     viewportHeight: 900,
     viewportWidth: 1400,
     specPattern: "**/*.feature",
+    blockHosts: ["*doubleclick.net*", "*googleads*"],
 
     setupNodeEvents(on, config) {
       on("file:preprocessor", cucumber());
+      require('@shelex/cypress-allure-plugin/writer')(on, config);
       return config;
     },
   },

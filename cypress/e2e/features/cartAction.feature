@@ -2,9 +2,6 @@ Feature: Cart Actions
 
 Background:
 Given User is on homepage
-# Then User submits credentials and performs login
-# Then Homepage should be displayed after authentication
-
 
 @focus
 Scenario: Add Products in Cart
