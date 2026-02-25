@@ -2,7 +2,7 @@ name: cypress_cucumber_automation_ex_02
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   test:
