@@ -1,0 +1,80 @@
+{
+  "baseUrl": "https://www.automationexercise.com",
+  "loginUrl": "https://www.automationexercise.com/login",
+
+  "productsLink": "[href='/products']",
+  "cartLink": "[href='/view_cart']",
+  "loginLink": "[href='/login']",
+  "logoutLink": "[href='/logout']",
+  "deleteAccountLink": "[href='/delete_account']",
+
+  "productSelector": "[data-product-id]",
+  "continueShoppingText": "Continue Shopping",
+  "viewCartText": "View Cart",
+  "proceedCheckoutText": "Proceed To Checkout",
+
+  "checkoutButton": ".check_out",
+
+  "signupName": "[data-qa='signup-name']",
+  "signupEmail": "[data-qa='signup-email']",
+  "signupButton": "[data-qa='signup-button']",
+
+  "loginEmail": "[data-qa='login-email']",
+  "loginPassword": "[data-qa='login-password']",
+  "loginButton": "[data-qa='login-button']",
+
+  "titleMr": "[value='Mr']",
+  "passwordField": "[data-qa='password']",
+  "daysSelect": "[data-qa='days']",
+  "monthsSelect": "[data-qa='months']",
+  "yearsSelect": "[data-qa='years']",
+  "newsletterCheckbox": "[name='newsletter']",
+  "optinCheckbox": "[name='optin']",
+
+  "firstName": "[data-qa='first_name']",
+  "lastName": "[data-qa='last_name']",
+  "company": "[data-qa='company']",
+  "address": "[data-qa='address']",
+  "country": "[data-qa='country']",
+  "state": "[data-qa='state']",
+  "city": "[data-qa='city']",
+  "zipcode": "[data-qa='zipcode']",
+  "mobile": "[data-qa='mobile_number']",
+
+  "createAccountButton": "[data-qa='create-account']",
+  "accountCreatedIndicator": "[data-qa='account-created']",
+  "continueButton": "[data-qa='continue-button']",
+
+  "messageField": "[name='message']",
+  "paymentLink": "[href='/payment']",
+
+  "cardName": "[data-qa='name-on-card']",
+  "cardNumber": "[data-qa='card-number']",
+  "cvc": "[data-qa='cvc']",
+  "expiryMonth": "[data-qa='expiry-month']",
+  "expiryYear": "[data-qa='expiry-year']",
+  "payButton": "[data-qa='pay-button']",
+
+  "featuresText": "Features Items",
+  "allProductsText": "All Products",
+  "itemText": "Item",
+  "descriptionText": "Description",
+  "priceText": "Price",
+
+  "addressDetailsText": "Address Details",
+  "reviewOrderText": "Review Your Order",
+  "deliveryAddressText": "Your delivery address",
+  "billingAddressText": "Your billing address",
+
+  "orderPlacedText": "Order Placed!",
+  "orderSuccessText": "Congratulations! Your order has been confirmed!",
+
+  "loggedInText": "Logged in as",
+
+  "signupNameValue": "Tester Silva",
+  "signupEmailValue": "testersilva@gmail.com",
+  "signupPasswordValue": "test12345",
+
+  "loginEmailValue": "Antoieine@test.com",
+  "loginPasswordValue": "12345"
+}
