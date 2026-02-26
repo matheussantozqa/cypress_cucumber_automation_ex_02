@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Cypress Tests
         run: |
-          docker run --rm cypress-tests
+          docker run --rm cypress-tests npx cypress run --env allure=true
 
       - name: Generate Allure Report
         run: |
