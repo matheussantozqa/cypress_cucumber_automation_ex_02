@@ -1,6 +1,5 @@
 const { defineConfig } = require("cypress");
 const cucumber = require("cypress-cucumber-preprocessor").default;
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 
 module.exports = defineConfig({
   e2e: {
@@ -12,8 +11,7 @@ module.exports = defineConfig({
     blockHosts: ["*doubleclick.net*", "*googleads*"],
 
     setupNodeEvents(on, config) {
-      on("file:preprocessor", createBundler());
-
+      on("file:preprocessor", cucumber());
       require("@shelex/cypress-allure-plugin/writer")(on, config);
       return config;
     },
