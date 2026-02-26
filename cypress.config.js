@@ -12,12 +12,7 @@ module.exports = defineConfig({
     blockHosts: ["*doubleclick.net*", "*googleads*"],
 
     setupNodeEvents(on, config) {
-      on(
-        "file:preprocessor",
-        createBundler({
-          plugins: [cucumber()],
-        })
-      );
+      on("file:preprocessor", createBundler());
 
       require("@shelex/cypress-allure-plugin/writer")(on, config);
       return config;
