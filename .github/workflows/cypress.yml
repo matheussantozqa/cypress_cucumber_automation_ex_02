@@ -22,9 +22,7 @@ jobs:
 
       - name: Run Cypress Tests
         run: |
-          docker run --rm \
-          -v ${{ github.workspace }}:/app \
-          cypress-tests
+          docker run --rm cypress-tests
 
       - name: Generate Allure Report
         run: |
