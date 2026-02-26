@@ -20,9 +20,13 @@ jobs:
       - name: Build Docker Image
         run: docker build -t cypress-tests .
 
+      
       - name: Run Cypress Tests
         run: |
-          docker run --rm cypress-tests npx cypress run --env allure=true
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            cypress-tests npx cypress run --env allure=true
 
       - name: Generate Allure Report
         run: |
