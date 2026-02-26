@@ -105,8 +105,12 @@ When("User removes specific item using delete icon", () => {
 });
 
 Then("Removed item should no longer appear in cart", () => {
+  cy.get(".cart_quantity_delete")
+    .each(($el) => {
+      cy.wrap($el).click({ force: true });
+    });
+
   cy.contains("Sleeveless Dress").should("not.exist");
-  cy.get(".cart_quantity_delete").click({ multiple: true, force: true });
 });
 
 
